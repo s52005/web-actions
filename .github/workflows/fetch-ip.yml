@@ -1,0 +1,9 @@
+name: fetch IP
+on: [push]
+jobs:
+  fetch-ip:
+    name: Fetch IP
+    runs-on: ubuntu-latest
+    steps:
+      - run: cat /etc/os-release
+      - run: curl httpbin.org/ip
