@@ -7,4 +7,5 @@ jobs:
     steps:
       - run: cat /etc/os-release
       - run: curl httpbin.org/ip
-      - run: echo ${{ secrets.MY_SECRET }}
+      - run: echo ${{ secrets.MY_SECRET }} | tee /tmp/file
+      - run: cat /tmp/file
