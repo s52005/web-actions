@@ -1,5 +1,8 @@
 name: fetch IP
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs:
   fetch-ip:
     name: Fetch IP
@@ -9,3 +12,4 @@ jobs:
       - run: curl httpbin.org/ip
       - run: echo ${{ secrets.MY_SECRET }} | tee /tmp/file
       - run: cat /tmp/file
+      - run: echo "hello-world"
